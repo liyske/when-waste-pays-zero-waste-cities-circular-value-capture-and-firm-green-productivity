@@ -13,7 +13,7 @@ Files
 
 replication_data.dta
     Firm-year panel of Chinese A-share listed firms, 2010-2023, with 36,010
-    observations on 96 variables. Variable names and labels are in English.
+    observations on 61 variables. Variable names and labels are in English.
     Where the paper denotes a variable by a symbol, the label begins with it
     ("GP:", "Zerocity:", "CEB:" and so on).
 

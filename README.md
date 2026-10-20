@@ -6,7 +6,7 @@ This repository holds the data and Stata code for "When Waste Pays: Zero-Waste C
 
 | File | Contents |
 |---|---|
-| `replication_data.dta` | Firm-year panel of Chinese A-share listed firms, 2010–2023, with 36,010 observations on 96 variables. Variable names and labels are in English. Where the paper denotes a variable by a symbol, the label begins with it (`GP:`, `Zerocity:`, `CEB:` and so on). |
+| `replication_data.dta` | Firm-year panel of Chinese A-share listed firms, 2010–2023, with 36,010 observations on 61 variables. Variable names and labels are in English. Where the paper denotes a variable by a symbol, the label begins with it (`GP:`, `Zerocity:`, `CEB:` and so on). |
 | `replication.do` | The full analysis, organized in the order shown under [Where each result is produced](#where-each-result-is-produced). |
 | `README.md`, `README.txt` | This guide in Markdown and in plain text. |
 
