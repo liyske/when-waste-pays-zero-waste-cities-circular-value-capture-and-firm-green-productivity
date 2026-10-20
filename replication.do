@@ -207,7 +207,7 @@ foreach var of local varlist {
 }
 **
 global Y gp
-global X size assetgrowth der pb top10 quick roa cl capex itr tmtpay size2 assetgrowth2 der2 pb2 top102 quick2 roa2 cl2 capex2 itr2 tmtpay2 economic2 finance2 gov2  i.id i.year
+global X size assetgrowth der pb top10 quick roa cl capex itr tmtpay economic finance gov size2 assetgrowth2 der2 pb2 top102 quick2 roa2 cl2 capex2 itr2 tmtpay2 economic2 finance2 gov2  i.id i.year
 global D did
 
 set seed 42   //随机种子数 / random seed
@@ -255,7 +255,7 @@ ddml E[D|X]: pystacked $D $X , type(reg) methods(gradboost)
 ddml E[D|X]: pystacked $D $X , type(reg) methods(rf)
 ddml E[D|X]: pystacked $D $X , type(reg) methods(lassocv)
 ddml crossfit
-ddml estimate, robust allcombos
+ddml estimate, robust cluster(citycode) allcombos
 est store A5
 outreg2 [ A5  ] using 堆叠dml.xlsx , replace bdec(4) rdec(4)  addtext(控制变量一次项,YES,控制变量二次项,YES,时间固定效应, YES,个体固定效应,YES)
 esttab A5, scalar(N r2_a) star(* 0.10 ** 0.05 *** 0.01) b(%6.4f) se(%6.4f) ///

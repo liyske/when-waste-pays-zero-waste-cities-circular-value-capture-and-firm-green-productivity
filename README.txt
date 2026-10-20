@@ -52,10 +52,10 @@ the following user-written packages:
 
 The double/debiased machine learning (DML) estimates in Table 6 run
 scikit-learn through Stata's Python integration (help python), so they also
-require a Python installation with scikit-learn. The interactive model in
-Table 6, column (5), was estimated with ddml 1.4.4, pystacked 0.8.0, Python
-3.11.9 and scikit-learn 1.9.1; other versions can move machine-learning
-estimates slightly.
+require a Python installation with scikit-learn. All five columns of Table 6
+were estimated with ddml 1.4.4, pystacked 0.8.0, Python 3.11.9 and
+scikit-learn 1.9.1; other versions can move machine-learning estimates
+slightly.
 
 On Windows, Stata/MP stops with "OMP: Error #15" when it is pointed to an
 Anaconda Python, whose NumPy is built against Intel MKL. A python.org
@@ -75,8 +75,10 @@ Running the code
 Tables are saved as RTF, Excel and text files, and figures as PNG and Stata
 .gph files. The period-by-period matching step also writes one matched
 sample per year, 2010.dta to 2023.dta. Excluding the DML section, a full run
-takes about 30 minutes on a desktop PC with Stata/MP 19.5. The interactive
-DML model alone took about another 30 minutes.
+takes about 30 minutes on a desktop PC with Stata/MP 19.5. The DML section
+takes far longer: on the same PC the four partially linear models ran for
+about 9 hours in total (2 to 2.5 hours each) and the interactive model for
+25 minutes.
 
 Code comments are in Chinese with English translations. Several output files
 have Chinese names; the header of replication.do gives their English meaning
@@ -162,7 +164,10 @@ Fisher permutation test in bdiffv with 500 replications, run on the same
 specification as the Table 7 regressions, with standard errors clustered by
 city.
 
-In the interactive DML model (Table 6, column 5), size is already the log of
-total assets and enters the controls as it is, together with its square.
-With the versions listed under Software, the model returns 0.0790 (standard
-error 0.0009).
+In Table 6, the partially linear models (columns 1-4) control for the firm
+and city covariates, their squares, and firm and year dummies. The
+interactive model (column 5) uses the firm covariates and their squares with
+firm and year dummies; size, which is already the log of total assets,
+enters as it is. All DML standard errors are clustered by city. With the
+versions listed under Software, the five columns return 0.0030 (0.0011),
+0.0028 (0.0011), 0.0027 (0.0011), 0.0026 (0.0010) and 0.0790 (0.0009).
